@@ -5,9 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ssr": "ng build --configuration production && ng run healthcare-app:server:production",
+    "serve:ssr": "node dist/healthcare-app/server/server.mjs",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:healthcare-app": "node dist/healthcare-app/server/server.mjs"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
