@@ -12,7 +12,7 @@ import { PrescriptionsComponent } from './app/admin/prescriptions/prescriptions.
 import { MedicineListComponent } from './app/user/medicine-list/medicine-list.component';
 import { MedicineDetailsComponent } from './app/user/medicine-details/medicine-details.component';
 import { CartComponent } from './app/user/cart/cart.component';
-import { ReceiptComponent } from './app/user/receipt/receipt.component';  // Import the ReceiptComponent
+import { ReceiptComponent } from './app/user/receipt/receipt.component';  
 
 import { LoginComponent } from './app/login/login.component';
 import { RegisterComponent } from './app/register/register.component'; 
@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'medicine-list', component: MedicineListComponent },
   { path: 'medicine-details/:id', component: MedicineDetailsComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'receipt', component: ReceiptComponent },  // Add route for receipt page
+  { path: 'receipt', component: ReceiptComponent },  
 
   { path: 'login', component: LoginComponent },  
   { path: 'register', component: RegisterComponent }, 

@@ -5,7 +5,6 @@
   "projects": {
     "healthcare-app": {
       "projectType": "application",
-      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -29,12 +28,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -50,12 +44,22 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "outputHashing": "none"
             }
           },
           "defaultConfiguration": "production"
@@ -71,6 +75,31 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/healthcare-app-server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            },
+            "development": {
+              "sourceMap": true,
+              "optimization": false
+            }
+          },
+          "defaultConfiguration": "production"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
