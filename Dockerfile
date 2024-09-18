@@ -22,8 +22,8 @@ FROM nginx:alpine
 # Copy custom Nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy the Angular app build from the previous stage
-COPY --from=build /app/dist/healthcare-app /usr/share/nginx/html
+# Copy the Angular app build from the previous stage (dist/healthcare-app/browser)
+COPY --from=build /app/dist/healthcare-app/browser /usr/share/nginx/html
 
 # Expose port 80 for the web server
 EXPOSE 80
