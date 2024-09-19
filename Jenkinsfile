@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        DOCKER_USERNAME = 'crimsony'  // Your Docker Hub username
-        DOCKER_PASSWORD = 'Sp@rky1225chance'  // Your Docker Hub password
+        DOCKER_USERNAME =  // Your Docker Hub username
+        DOCKER_PASSWORD =  // Your Docker Hub password
     }
     stages {
         stage('Checkout') {
